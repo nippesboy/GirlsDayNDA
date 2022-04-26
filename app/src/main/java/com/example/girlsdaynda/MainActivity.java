@@ -3,9 +3,6 @@ package com.example.girlsdaynda;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -48,9 +45,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        setRouteSpinnerQuestion();
-        initRouteSpinner();
     }
 
     @Override
@@ -65,17 +59,5 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    public void initRouteSpinner() {
-        Spinner dropdown = findViewById(R.id.route_spinner);
-        String[] items = new String[]{"Zu Hause", "Sportverein", "Cafe"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
-    }
-
-    public void setRouteSpinnerQuestion() {
-        TextView myAwesomeTextView = (TextView)findViewById(R.id.start_route_selector);
-        myAwesomeTextView.setText("Wo möchtest du starten?");
     }
 }
