@@ -3,7 +3,9 @@ package com.example.girlsdaynda;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        setRouteSpinnerQuestion();
+        setTextForRouteSpinner();
         initRouteSpinner();
     }
 
@@ -67,15 +69,29 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    public void setTextForRouteSpinner() {
+        TextView myAwesomeTextView = (TextView)findViewById(R.id.start_route_selector);
+        myAwesomeTextView.setText("Wo möchtest du starten?");
+    }
+
     public void initRouteSpinner() {
         Spinner dropdown = findViewById(R.id.route_spinner);
         String[] items = new String[]{"Zu Hause", "Sportverein", "Cafe"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
+        resetRouteRatingBar(dropdown);
     }
 
-    public void setRouteSpinnerQuestion() {
-        TextView myAwesomeTextView = (TextView)findViewById(R.id.start_route_selector);
-        myAwesomeTextView.setText("Wo möchtest du starten?");
+    private void resetRouteRatingBar(Spinner dropdown) {
+        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                RatingBar ratingBar = findViewById(R.id.rating);
+                ratingBar.setRating(0.0f);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
     }
 }
