@@ -2,12 +2,14 @@
     <string name="app_name">GirlsDayNDA</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Die Ford Schulweg App</string>
+    <string name="nav_header_subtitle">mein_schulweg@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_gallery">Verkersmittel</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_beschreibung">Mit dem Mustang macht der Weg zur Schule doppelt so viel Spaß, am Morgen freut man sich in den gemüdlichen sitzen sich noch mal außruhen zu können und man muss nicht so früh aufstehen.</string>
+    <string name="menu_skateing">Skaten eine Naturfreundliche- und Schöneart zur Schule zukommen.</string>
 </resources>
